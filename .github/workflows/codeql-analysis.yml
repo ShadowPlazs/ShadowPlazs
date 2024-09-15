@@ -11,8 +11,8 @@
 #
 name: "CodeQL"
 
-on:
-  push:
+on:start
+  push:main
     branches: [ main ]
   pull_request:
     # The branches below must be a subset of the branches above
@@ -20,11 +20,11 @@ on:
   schedule:
     - cron: '30 15 * * 0'
 
-jobs:
+jobs:scan-organization-ShadowPlazs Hangout/Creations Room
   analyze:
     name: Analyze
     runs-on: ubuntu-latest
-    permissions:
+    permissions:all
       actions: read
       contents: read
       security-events: write
@@ -32,7 +32,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [  ]
+        language: [english]
         # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python' ]
         # Learn more:
         # https://docs.github.com/en/free-pro-team@latest/github/finding-security-vulnerabilities-and-errors-in-your-code/configuring-code-scanning#changing-the-languages-that-are-analyzed
